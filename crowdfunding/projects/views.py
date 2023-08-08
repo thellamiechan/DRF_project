@@ -1,16 +1,16 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Project, Pledge
-from .serializers import ProjectSerializer, PledgeSerializer, ProjectDetailSerializer
+from .serializers import ProjectSerializer, PledgeSerializer, ProjectDetailSerializer, PledgeDetailSerializer
 from django.http import Http404
 from rest_framework import status, permissions
 from .permissions import IsOwnerOrReadOnly
-
 
 # Create your views here.
 
 class ProjectList(APIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
     def get(self, request):
         projects = Project.objects.all()
         serializer = ProjectSerializer(projects, many=True)
@@ -59,6 +59,7 @@ class ProjectDetail(APIView):
             serializer.save()
     
 class PledgeList(APIView):
+    permission_class = [permissions.IsAuthenticatedOrReadOnly]
 
     def get(self, request):
         pledges = Pledge.objects.all()
@@ -77,3 +78,16 @@ class PledgeList(APIView):
             serializer.errors,
             status=status.HTTP_400_BAD_REQUEST
         )
+    
+    class PledgeDetail(APIView):
+        permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
+
+        def put(self, request):
+            pledge = PledgeDetailSerializer(self, request)
+            serializer = PledgeDetailSerializer(
+                instance=pledge,
+                data=request.data,
+                partial=True
+            )
+            if serializer.is_valid():
+                serializer.save()

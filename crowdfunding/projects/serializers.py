@@ -7,6 +7,15 @@ class PledgeSerializer(serializers.ModelSerializer):
         model = apps.get_model('projects.Pledge')
         fields = '__all__'
 
+class PledgeDetailSerializer(PledgeSerializer):
+
+    def update(self, instance, validated_data):
+        instance.comment = validated_data.get('comment', instance.comment)
+        instance.anonymous = validated_data.get('anonymous', instance.anonymous)
+        instance.save()
+        return instance
+
+
 class ProjectSerializer(serializers.ModelSerializer):
     supporter = serializers.ReadOnlyField(source='owner.id')
     class Meta:        
@@ -18,7 +27,7 @@ class ProjectDetailSerializer(ProjectSerializer):
 
     def update(self, instance, validated_data):
         instance.title = validated_data.get('title', instance.title)
-        instance.description = validated_data.get('description',instance.description)
+        instance.synopsis = validated_data.get('synopsis',instance.synopsis)
         instance.goal = validated_data.get('goal', instance.goal)
         instance.image = validated_data.get('image', instance.image)
         instance.is_open = validated_data.get('is_open', instance.is_open)
