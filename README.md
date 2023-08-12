@@ -1,4 +1,4 @@
-# DRI_project
+# DRF_project
 She Codes DRF Module
 Bookarina
 
@@ -21,10 +21,10 @@ Stretch goal ability to delete a project
 Stretch goal pagination and the ability to determine how many items per page shown
 Stretch goal 
 
-
 API Specification
 
 ![API specification](APIspec.png)
+
 
 Database Schema
 
@@ -32,7 +32,6 @@ Database Schema
 
 
 Wireframes
-
 {{ ![Wireframe](<excalidraw wireframe DRF.png>) }}
 
 
@@ -45,38 +44,41 @@ Colour Scheme
 --raisin-black: #1B171Eff;
 --dutch-white: #F7E9C8ff; }}
 
-
 Fonts
 
 {{ [font: josefin sans](../../../Downloads/Josefin_Sans/JosefinSans-VariableFont_wght.ttf) }}
+
+
 Submission Documentation
 
 {{ Fill this section out for submission }}
 
 Deployed Project: https://crimson-pond-5974.fly.dev/
+
 How To Run
-
 {{ What steps to take to run this code }}
+
 Updated Database Schema
-
 {{ Updated schema }}
-
 image info goes here
+
 Updated Wireframes
-
 {{ Updated wireframes }}
-
 image info goes here
-How To Register a New User
 
+
+How To Register a New User
 {{ Step by step instructions for how to register a new user and create a new project (i.e. endpoints and body data). }}
+
+
 Screenshots
 
  A screenshot of Insomnia, demonstrating a successful GET method for any endpoint.
-image info goes here
+![Get Request](<crowdfunding/crowdfunding/images/Get request.png>)
 
  A screenshot of Insomnia, demonstrating a successful POST method for any endpoint.
-image info goes here
+![Post request](<crowdfunding/crowdfunding/images/Post request.png>)
 
  A screenshot of Insomnia, demonstrating a token being returned.
-image info goes here
+
+![Auth Token Request](<crowdfunding/crowdfunding/images/auth token request.png>)
