@@ -1,5 +1,5 @@
 # DRI_project
-She Codes DRI Module
+She Codes DRF Module
 Bookarina
 
 by {{ Julie Powell }}
@@ -7,15 +7,15 @@ She Codes crowdfunding project - DRF Backend.
 About
 
 {{ This crowdfunding site is for authors who wish to raise money to self publish their book. Self publishing is often the only recourse authors have in today's super competitve publishing era. Self publishing can be expensive, though. Crowdfunding to the rescue! }}
-Features
 
+Features
 {{ The features your MVP will include. (Remember this is a working document, you can change these as you go!) }}
 feature
 feature
 
-{{ Outline three features that will be your stretch goals if you finish your MVP }}
 
 Stretch Goals
+{{ Outline three features that will be your stretch goals if you finish your MVP }}
 
 Stretch goal ability to delete a project
 Stretch goal pagination and the ability to determine how many items per page shown
@@ -53,7 +53,7 @@ Submission Documentation
 
 {{ Fill this section out for submission }}
 
-Deployed Project: Deployed website
+Deployed Project: https://crimson-pond-5974.fly.dev/
 How To Run
 
 {{ What steps to take to run this code }}
