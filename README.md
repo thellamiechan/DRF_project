@@ -18,7 +18,7 @@ feature
 Stretch Goals
 
 Stretch goal ability to delete a project
-Stretch goal 
+Stretch goal pagination and the ability to determine how many items per page shown
 Stretch goal 
 
 

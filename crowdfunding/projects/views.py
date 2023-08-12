@@ -30,10 +30,8 @@ class ProjectList(APIView):
         )
         
 class ProjectDetail(APIView):
-    permission_classes = [       
-        permissions.IsAuthenticatedOrReadOnly, 
-        IsOwnerOrReadOnly
-    ]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
+
 
     def get_object(self, pk):
         try:
@@ -57,9 +55,17 @@ class ProjectDetail(APIView):
         )
         if serializer.is_valid():
             serializer.save()
+            return Response(
+                serializer.data,
+                status=status.HTTP_200_OK
+            )
+        return Response(
+            serializer.errors,
+            status=status.HTTP_400_BAD_REQUEST
+        )
     
 class PledgeList(APIView):
-    permission_class = [permissions.IsAuthenticatedOrReadOnly]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     def get(self, request):
         pledges = Pledge.objects.all()
@@ -91,3 +97,11 @@ class PledgeList(APIView):
             )
             if serializer.is_valid():
                 serializer.save()
+                return Response(
+                    serializer.data,
+                    status=status.HTTP_200_OK
+            )
+            return Response(
+                serializer.errors,
+                status=status.HTTP_400_BAD_REQUEST
+        )
