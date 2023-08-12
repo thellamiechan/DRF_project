@@ -1,4 +1,4 @@
-app = "YOUR-APP-NAME"
+app = "crimson-pond-5974"
 primary_region = "syd"
 console_command = "/code/manage.py shell"
 kill_signal = "SIGINT"
