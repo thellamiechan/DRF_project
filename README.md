@@ -55,6 +55,7 @@ Submission Documentation
 Deployed Project: https://crimson-pond-5974.fly.dev/
 
 How To Run
+
 In insomnia, access the above url. because its a secure site you will need to sign in with a username, password and email. you will be given an auth code that allows you access to the rest of the site. (you can save the authcode in your environment and use _.token to put it in all the different pages ;) In the GET requests you won't need to put any JSON in the request, but in the POST requests you do. The Projects post will look like this:
 {
 	"title": "str",
@@ -76,16 +77,21 @@ for the pledges post you will need JSON that looks like this:
 } 
 
 Updated Database Schema
+
 ![Schema For Database](<crowdfunding/crowdfunding/images/schema for database.png>) 
 I didn't much update the schema, because the basic relations haven't changed at all. 
 
 Updated Wireframes
- ![Updated Wireframe](<crowdfunding/crowdfunding/images/Updated wireframe.excalidraw>) 
+
+![Updated Wireframe](<crowdfunding/crowdfunding/images/Updated wireframe.excalidraw>) 
 I now have a better idea of how the site will look with the react added.
 
 
 How To Register a New User
-In insomnia, in a POST user request, use this JSON:
+
+Deployed Project: https://crimson-pond-5974.fly.dev/
+
+In insomnia, access the deployed project, in a POST user request, use this JSON:
 {
 	"username": "str",
 	"password": "str",
