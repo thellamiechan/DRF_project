@@ -29,11 +29,4 @@ class CustomUserDetail(APIView):
     def get(self, request, pk):
         user = self.get_object(pk)
         serializer = CustomUserSerializer(user)
-        return Response(serializer.data)
-
-    def post(self, request):
-        serializer = CustomUserSerializer(data=request.data)
-        if serializer.is_valid();
-            serializer.save()
-            return Response(serialzer.data)
-        return Response(serializer.errors)
+        return Response(serializer.data) 
