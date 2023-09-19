@@ -29,4 +29,4 @@ class CustomUserDetail(APIView):
     def get(self, request, pk):
         user = self.get_object(pk)
         serializer = CustomUserSerializer(user)
-        return Response(serializer.data)
+        return Response(serializer.data) 
